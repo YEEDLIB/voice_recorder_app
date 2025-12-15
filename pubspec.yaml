@@ -59,61 +59,13 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   
-  # Assets
-  assets:
-    - assets/audio/  # For any audio samples or UI sounds
-    - assets/images/ # For app icons and UI images
+  # Assets (optional - create these directories if you need them)
+  # assets:
+  #   - assets/audio/
+  #   - assets/images/
   
-  # Fonts
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Poppins-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Poppins-Bold.ttf
-          weight: 700
-  
-  # Android Configuration
-  android:
-    package: com.example.voice_recorder_app
-    generate: true
-    permissions:
-      - RECORD_AUDIO
-      - FOREGROUND_SERVICE
-      - FOREGROUND_SERVICE_MICROPHONE
-      - POST_NOTIFICATIONS
-      - WAKE_LOCK
-      - RECEIVE_BOOT_COMPLETED
-      - SCHEDULE_EXACT_ALARM
-      - USE_EXACT_ALARM
-    
-    custom_config:
-      # For Android 12+ notification trampoline restrictions
-      android:usesCleartextTraffic: true
-      
-      # Battery optimization handling
-      meta-data:
-        - name: com.google.android.gms.version
-          value: "@integer/google_play_services_version"
-    
-  # iOS Configuration
-  ios:
-    bundleIdentifier: com.example.voiceRecorderApp
-    info.plist:
-      UIBackgroundModes:
-        - audio
-      NSMicrophoneUsageDescription: "This app needs microphone access to record audio"
-      NSAppleMusicUsageDescription: "This app needs music library access to manage recordings"
-      
-      # For background audio recording
-      AVAudioSession:
-        Category: playAndRecord
-        CategoryOptions:
-          - mixWithOthers
-        Mode: default
-
-# Generated files
-generated_plugin_registrant: true
+  # Fonts (optional - remove if you don't need custom fonts)
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/Poppins-Regular.ttf
